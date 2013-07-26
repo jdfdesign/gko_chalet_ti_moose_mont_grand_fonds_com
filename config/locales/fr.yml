@@ -1,0 +1,31 @@
+fr:
+  custom:
+    all_areas: Tous les quartiers
+    all_cuisines: Toutes les cuisines
+    all_services: Tous les services
+    see_map: Carte des restaurants
+    localize_on_map: Voir sur la carte
+    view_menus: Voir les menus
+    menu_unavailables: Indisponible
+    table_booking: Réserver
+    table_booking_unavailable: Indisponible
+    located_in: quartier
+    open_for: ouvert pour
+    annual_closing: Fermetire annuelle
+    opening: Heures d'ouverture
+    view_all: Tout voir
+    results: Résultat(s)
+    back_to_list: Fermer
+    previous_restaurant: Précédent 
+    next_restaurant: Suivant
+    close: Fermer
+    presentation: Présentation
+    services: Service(s)
+    dinner: Dîner
+    lunch: Déjeuner
+    togo: A emporter
+    
+  inquiry_mailer:
+    table_notification:
+      subject: Demande de réservation
+    

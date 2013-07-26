@@ -1,0 +1,67 @@
+fr:
+  restaurants:
+    title: Catégories
+    meta_title: "Catégories"
+    all: Tous
+  
+  activerecord:
+    models:
+      restaurant: Restaurant
+      
+  helpers:
+    select:
+      prompt:
+        restaurant: Type de bien
+    submit:
+      restaurant:
+        create: "Ajouter ce restaurant"
+
+  confirmations:
+    destroy:
+      restaurant: "Voulez-vous réellement supprimer définitivement ce restaurant ? <br/>Cette action est irréversible et supprimera cette restaurant de toutes les pages l'utilisant!"
+                   
+  simple_form:
+    labels:
+      restaurant:
+        title: "Nom"
+        body: "Description"
+        open_for_dinner: "Diner ?"
+        open_for_lunch: "Déjeuner ?"
+        open_for_breakfast: "Petit déjeuner ?"
+        to_go: "Vente à emporter"
+        delivery_at_home: "Livraison à domicile"
+        dinner_services: "Services diner"
+        lunch_services: "Services déjeuner"
+        area: "Quartier"
+        email: "Email"
+        lat_long: "Localisation(Gmap)"
+        phone_number: "Téléphone"
+        fax_number: "Fax"
+        logo: "Logo"
+        allow_reservations: "Accepte les réservations"
+        cell_phone: "Téléphone mobile"
+        opening_hours: "Heure d'ouverture"
+        annual_closing: "Fermeture annuelle"
+        hotel_name: "Hotel"
+        street: "Rue"
+        website_url: "Site Internet"
+        facebook_url: "Page Facebook"
+
+  admin:
+    restaurants: 
+      collection:
+        empty: "Aucun restaurant n'a été trouvé"
+        create_item: "Ajouter un nouveau restaurant maintenant."
+      actions:
+        new: Ajouter un nouveau restaurant
+        destroy: Supprimer ce restaurant
+        edit: Modifier ce restaurant
+        index: Restaurants
+        view: Voir la page publique
+      tooltips:
+        index: Liste des restaurants
+      titles:
+        new: Ajout d'un nouveau restaurant
+        index: Liste des restaurants
+        edit: Modification d'un restaurant
+        

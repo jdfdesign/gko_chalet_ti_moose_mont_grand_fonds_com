@@ -1,0 +1,26 @@
+en:
+  custom:
+    all_areas: All areas
+    all_cuisines: All cuisines
+    all_services: All services
+    see_map: Restaurants' map
+    localize_on_map: MAP
+    view_menus: MENUS
+    menu_unavailables: Unavailable
+    table_booking: BOOK
+    table_booking_unavailable: Unavailable
+    located_in: Located in
+    open_for: open for
+    annual_closing: Annual closing
+    opening: Open
+    view_all: View all
+    results: Résult(s)
+    back_to_list: Back to list
+    previous_restaurant: Previous 
+    next_restaurant: Next
+    close: Close
+    presentation: Presentation
+    services: Service(s)
+    dinner: Dinner
+    lunch: Lunch
+    togo: ToGo
