@@ -1,0 +1,13 @@
+<% resource_cache(resource) do %>
+  <article class="<%= resource_instance_name %>">
+    <%= render_slideshow_for(resource) %>
+    <container>
+      <row>
+        <div class="col-lg-12 article-body">
+          <%= render_page_title(resource.title) %>
+          <%= render_html_text(resource.body) %>
+        </div>
+      </row>
+    </container>
+	</article>
+<% end %>  
