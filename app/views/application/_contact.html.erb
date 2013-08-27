@@ -1,4 +1,4 @@
-<% page_contact = site.sections.find_by_name("contact") %>
+<% if page_contact = site.sections.find_by_name("contact") %>
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 intro">
     <h1 class="text-center"><%= page_contact.title %></h1>
@@ -32,3 +32,4 @@
     </form>
   </div>
 </div>
+<% end %>
