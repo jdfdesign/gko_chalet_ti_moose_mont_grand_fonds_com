@@ -1,12 +1,12 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 4d4ece77cf9427197066ae7d6491c4ea69e1fe51
-  tag: v0.6.50.rc11
+  revision: eb3e2549f00e427ee136d2af6678d61a3ee47cbe
+  tag: v0.6.60.rc1
   specs:
-    gko_auth (0.6.50.rc11)
+    gko_auth (0.6.60.rc1)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
-    gko_core (0.6.50.rc11)
+    gko_core (0.6.60.rc1)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -49,10 +49,10 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.6.50.rc11)
+    gko_documents (0.6.60.rc1)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_inquiries (0.6.50.rc11)
+    gko_inquiries (0.6.60.rc1)
       filters_spam (~> 0.2)
 
 GEM
@@ -91,7 +91,7 @@ GEM
     addressable (2.3.5)
     arel (3.0.2)
     babosa (0.3.11)
-    bcrypt-ruby (3.1.1)
+    bcrypt-ruby (3.1.2)
     builder (3.0.4)
     cancan (1.6.10)
     capistrano (2.15.5)
@@ -104,7 +104,7 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
-    codemirror-rails (3.15)
+    codemirror-rails (3.16)
       railties (>= 3.0, < 5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -239,7 +239,7 @@ GEM
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    spreadsheet (0.8.8)
+    spreadsheet (0.8.9)
       ruby-ole (>= 1.0)
     sprockets (2.2.2)
       hike (~> 1.2)

@@ -3497,11 +3497,11 @@ button.close {
   padding-bottom: 40px;
   font-size: 18px;
   line-height: 20px;
-  color: black;
+  color: #315557;
 }
 /* line 136, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-brand:hover, .navbar-brand:focus {
-  color: #315557;
+  color: #437578;
   text-decoration: none;
   background-color: transparent;
 }
@@ -3554,12 +3554,12 @@ button.close {
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #777777;
+  color: black;
   line-height: 20px;
 }
 /* line 201, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-  color: #315557;
+  color: #437578;
   background-color: transparent;
 }
 /* line 209, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
@@ -3590,12 +3590,12 @@ button.close {
   }
   /* line 237, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
   .navbar-nav .open .dropdown-menu > li > a {
-    color: #777777;
+    color: black;
     line-height: 20px;
   }
   /* line 241, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
   .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #315557;
+    color: #437578;
     background-color: transparent;
     background-image: none;
   }
@@ -3719,8 +3719,8 @@ button.close {
 /* line 359, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-nav > .dropdown > a:hover .caret,
 .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #315557;
-  border-bottom-color: #315557;
+  border-top-color: #437578;
+  border-bottom-color: #437578;
 }
 /* line 368, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
@@ -3734,8 +3734,8 @@ button.close {
 }
 /* line 377, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-nav > .dropdown > a .caret {
-  border-top-color: #777777;
-  border-bottom-color: #777777;
+  border-top-color: black;
+  border-bottom-color: black;
 }
 
 /* line 385, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
@@ -3768,11 +3768,11 @@ button.close {
 
 /* line 421, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-link {
-  color: #777777;
+  color: black;
 }
 /* line 423, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
 .navbar-link:hover {
-  color: #315557;
+  color: #437578;
 }
 
 /* line 432, ../../app/assets/stylesheets/twitter/bootstrap/3.0.0.rc2/_navbar.scss */
@@ -8393,29 +8393,116 @@ a .icon-flip-vertical:before {
   content: "\f18b";
 }
 
-/* line 5, ../../app/assets/stylesheets/public.css.scss */
+/* PATCHES
+-------------------------------------------------- */
+/* line 11, ../../app/assets/stylesheets/public.css.scss */
+a:focus,
+.btn:focus {
+  outline: 0;
+}
+
+/* line 14, ../../app/assets/stylesheets/public.css.scss */
+::selection {
+  background-color: #315557;
+  color: #ffffff;
+}
+
+/* line 20, ../../app/assets/stylesheets/public.css.scss */
+#map-canvas {
+  height: 400px;
+}
+/* line 22, ../../app/assets/stylesheets/public.css.scss */
+#map-canvas img {
+  max-width: none;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* STICKY FOOTER STYLES
+-------------------------------------------------- */
+/* line 33, ../../app/assets/stylesheets/public.css.scss */
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+/* line 39, ../../app/assets/stylesheets/public.css.scss */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+/* line 50, ../../app/assets/stylesheets/public.css.scss */
+footer {
+  height: 60px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* GLOBAL
+-------------------------------------------------- */
+/* line 57, ../../app/assets/stylesheets/public.css.scss */
 a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-/* line 8, ../../app/assets/stylesheets/public.css.scss */
+/* LAYOUT
+-------------------------------------------------- */
+/* line 63, ../../app/assets/stylesheets/public.css.scss */
 body {
   background-image: url(/assets/retina_wood.png);
-  background-position: initial initial;
-  background-repeat: initial initial;
+  background-position: 0 0;
+  background-repeat: repeat repeat;
 }
 
-/* line 22, ../../app/assets/stylesheets/public.css.scss */
+/* TYPES
+-------------------------------------------------- */
+/* line 75, ../../app/assets/stylesheets/public.css.scss */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #315557;
+}
+
+/* CUSTOMIZE THE FOOTER
+-------------------------------------------------- */
+/* line 81, ../../app/assets/stylesheets/public.css.scss */
+footer .nav {
+  float: left;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 86, ../../app/assets/stylesheets/public.css.scss */
+footer .nav > li {
+  float: left;
+}
+/* line 88, ../../app/assets/stylesheets/public.css.scss */
+footer .nav > li > a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+/* line 94, ../../app/assets/stylesheets/public.css.scss */
+footer .nav > li > a:hover, footer .nav > li > a:focus {
+  background-color: transparent;
   color: #315557;
 }
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
-/* line 30, ../../app/assets/stylesheets/public.css.scss */
+/* line 105, ../../app/assets/stylesheets/public.css.scss */
 .carousel {
   margin-bottom: 0;
   max-width: 768px;
@@ -8424,112 +8511,136 @@ h1, h2, h3, h4, h5, h6,
   margin-right: auto;
 }
 
-/* line 37, ../../app/assets/stylesheets/public.css.scss */
+/* line 111, ../../app/assets/stylesheets/public.css.scss */
 .carousel-inner > .item > img {
   min-width: 100%;
 }
 
-/* line 41, ../../app/assets/stylesheets/public.css.scss */
+/* line 117, ../../app/assets/stylesheets/public.css.scss */
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+  width: 90px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -45px;
+  font-family: serif;
+  font-size: 90px;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+/* line 128, ../../app/assets/stylesheets/public.css.scss */
 .navbar {
   margin-bottom: 0;
 }
 
-/* line 45, ../../app/assets/stylesheets/public.css.scss */
+/* line 131, ../../app/assets/stylesheets/public.css.scss */
 .navbar-brand {
   font-family: 'Lobster', Georgia, "Times New Roman", Times, serif;
   font-size: 24px;
 }
 
-/* line 49, ../../app/assets/stylesheets/public.css.scss */
+/* line 135, ../../app/assets/stylesheets/public.css.scss */
 .navbar-nav > li > a {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 11px;
 }
 
-/* Responsive
+/* line 141, ../../app/assets/stylesheets/public.css.scss */
+#locales-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 145, ../../app/assets/stylesheets/public.css.scss */
+#locales-menu .nav > li > a {
+  background-color: #315557;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 9px;
+  padding: 4px 8px;
+}
+/* line 153, ../../app/assets/stylesheets/public.css.scss */
+#locales-menu .nav > li > a:hover, #locales-menu .nav > li > a:focus {
+  background-color: #437578;
+  color: white;
+}
+
+/* CUSTOMIZE ARTICLES
 -------------------------------------------------- */
-/* line 56, ../../app/assets/stylesheets/public.css.scss */
+/* line 163, ../../app/assets/stylesheets/public.css.scss */
 .article-body {
   background-color: #fff;
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: center;
 }
-/* line 61, ../../app/assets/stylesheets/public.css.scss */
-.article-body p {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 19px;
-  line-height: 32px;
-  font-weight: 400;
-  max-width: 500px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 70, ../../app/assets/stylesheets/public.css.scss */
+/* line 169, ../../app/assets/stylesheets/public.css.scss */
 .article-body h1 {
   margin-bottom: 60px;
 }
 
-/* line 74, ../../app/assets/stylesheets/public.css.scss */
-#map-canvas {
-  height: 400px;
-}
-/* line 76, ../../app/assets/stylesheets/public.css.scss */
-#map-canvas img {
-  max-width: none;
-  vertical-align: middle;
-  border: 0;
-  -ms-interpolation-mode: bicubic;
+/* line 173, ../../app/assets/stylesheets/public.css.scss */
+.copy-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 19px;
+  line-height: 32px;
+  font-weight: 400;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* CONTACT STYLES
 -------------------------------------------------- */
-/* line 85, ../../app/assets/stylesheets/public.css.scss */
+/* line 184, ../../app/assets/stylesheets/public.css.scss */
 #contacts {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+/* line 188, ../../app/assets/stylesheets/public.css.scss */
+#contacts form {
+  margin-top: 2em;
+}
 
-/* line 89, ../../app/assets/stylesheets/public.css.scss */
+/* line 193, ../../app/assets/stylesheets/public.css.scss */
+.form-control {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+/* line 196, ../../app/assets/stylesheets/public.css.scss */
+.form-control:focus {
+  border-color: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #e6e6e6;
+}
+
+/* line 203, ../../app/assets/stylesheets/public.css.scss */
 input {
   color: #1a1a1a;
   font-weight: normal;
 }
 
-/* line 90, ../../app/assets/stylesheets/public.css.scss */
+/* line 207, ../../app/assets/stylesheets/public.css.scss */
 input[type="text"] {
   margin-bottom: 15px;
   height: 40px;
 }
 
-/* line 91, ../../app/assets/stylesheets/public.css.scss */
-textarea {
+/* line 210, ../../app/assets/stylesheets/public.css.scss */
+textarea.form-control {
   height: 120px;
   resize: none;
 }
 
-/* line 92, ../../app/assets/stylesheets/public.css.scss */
-input[type="text"], textarea {
-  padding: 0.6em;
-  width: 100%;
-  outline: none;
-  border: none;
-  -webkit-border-radius: 0px;
-  box-shadow: none;
-  color: #1a1a1a;
-}
-
-/* line 93, ../../app/assets/stylesheets/public.css.scss */
-input[type="text"]:focus, textarea:focus {
-  background: #e6e6e6;
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
-  transition: all 0.15s linear;
-}
-
-/* line 96, ../../app/assets/stylesheets/public.css.scss */
+/* line 215, ../../app/assets/stylesheets/public.css.scss */
 #contacts .btn {
   width: 100%;
   margin-top: 1em;
@@ -8537,31 +8648,29 @@ input[type="text"]:focus, textarea:focus {
   border: none;
   background-color: #315557;
   color: white;
+  text-transform: uppercase;
   -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-
-/* line 97, ../../app/assets/stylesheets/public.css.scss */
+/* line 224, ../../app/assets/stylesheets/public.css.scss */
 #contacts .btn:hover {
   background-color: #437578;
   color: white;
 }
 
-/* line 98, ../../app/assets/stylesheets/public.css.scss */
+/* line 229, ../../app/assets/stylesheets/public.css.scss */
 .formContainer {
   position: relative;
 }
 
-/* line 101, ../../app/assets/stylesheets/public.css.scss */
+/* line 232, ../../app/assets/stylesheets/public.css.scss */
 span.error, span.valid {
   position: absolute;
   top: 0;
   right: 1em;
 }
 
-/* line 102, ../../app/assets/stylesheets/public.css.scss */
+/* line 233, ../../app/assets/stylesheets/public.css.scss */
 span.error, span.valid {
   width: 40px;
   height: 40px;
@@ -8570,17 +8679,17 @@ span.error, span.valid {
   background-repeat: no-repeat;
 }
 
-/* line 103, ../../app/assets/stylesheets/public.css.scss */
+/* line 234, ../../app/assets/stylesheets/public.css.scss */
 span.error {
-  background-image: url("../images/notifications/error.svg");
+  background-image: "/assets/notifications/error.svg";
 }
 
-/* line 104, ../../app/assets/stylesheets/public.css.scss */
+/* line 235, ../../app/assets/stylesheets/public.css.scss */
 span.valid {
-  background-image: url("../images/notifications/valid.svg");
+  background-image: "/assets/notifications/valid.svg";
 }
 
-/* line 106, ../../app/assets/stylesheets/public.css.scss */
+/* line 237, ../../app/assets/stylesheets/public.css.scss */
 .alert {
   display: none;
   border: 0;
@@ -8589,52 +8698,38 @@ span.valid {
   color: white;
 }
 
-/* line 107, ../../app/assets/stylesheets/public.css.scss */
+/* line 238, ../../app/assets/stylesheets/public.css.scss */
 .alert-success {
   background-color: #22b573;
   color: white;
 }
 
-/* Each Contact Info */
-/* line 111, ../../app/assets/stylesheets/public.css.scss */
-.contact {
-  margin-bottom: 1em;
-}
-
-/* line 113, ../../app/assets/stylesheets/public.css.scss */
-.contact-info {
-  margin-top: 2em;
-}
-
-/* line 114, ../../app/assets/stylesheets/public.css.scss */
-.contact-info p {
-  margin-top: 1em;
-  font-size: 1em;
-}
-
-/* line 115, ../../app/assets/stylesheets/public.css.scss */
-.contact-info .icon a i {
-  text-decoration: none;
-  color: #f4594e;
-}
-
-/* line 116, ../../app/assets/stylesheets/public.css.scss */
-.contact-info .icon a:hover i {
-  color: black;
-}
-
-/* line 118, ../../app/assets/stylesheets/public.css.scss */
-.contact-label {
-  color: #999;
-  font-size: 1.5em;
-  font-family: 'Cabin', sans-serif;
-}
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* line 248, ../../app/assets/stylesheets/public.css.scss */
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 90px;
+    height: 90px;
+    margin-top: -45px;
+    margin-left: -45px;
+    font-size: 90px;
+  }
+}
 @media (min-width: 993px) {
-  /* line 128, ../../app/assets/stylesheets/public.css.scss */
+  /* line 261, ../../app/assets/stylesheets/public.css.scss */
   .navbar-nav {
     float: right !important;
+  }
+
+  /* line 264, ../../app/assets/stylesheets/public.css.scss */
+  .carousel-control .icon-prev {
+    margin-left: -120px;
+  }
+
+  /* line 267, ../../app/assets/stylesheets/public.css.scss */
+  .carousel-control .icon-next {
+    margin-left: 30px;
   }
 }
