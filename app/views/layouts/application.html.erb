@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <%= render 'head' %>
-<body>
+<body id='<%= @body_id %>'>
   <div id="wrap">
     <%= render "navbar" %>
     <section class="main-content">
       <%= yield %>
     </section>
-    <section id="contacts">
+    <section id="contact_us">
       <%= render "contact" %>
     </section> 
   </div>

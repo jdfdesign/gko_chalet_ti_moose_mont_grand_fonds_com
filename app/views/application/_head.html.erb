@@ -12,25 +12,15 @@
 	<%= yield :meta %>                                                
 	<!-- Le styles -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  
-	<% if site.has_plugin?(:themes) and site.has_theme? %>
-    <%= theme_stylesheet_link_tag "public" %>
-	<% else %>
-    <%= stylesheet_link_tag "public" %>
-	<% end %>
+  <%= stylesheet_link_tag "public" %>
   <%= raw %(<style type='text/css' media='all'>#{site.stylesheet}</style>) if site.stylesheet? -%>
 	<!-- Le fav and touch icons -->
 	<link rel="shortcut icon" href="/favicon.ico">
 	<!-- <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png"> -->
-  <%= render "typekit" %>
+
   <%= csrf_meta_tags if site.authenticity_token_on_frontend -%>
 	<%= yield :head %>
-	
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="../../assets/js/html5shiv.js"></script>
-    <script src="../../assets/js/respond.min.js"></script>
-  <![endif]-->
+  <%= javascript_include_tag "modernizr-2.6.2-respond-1.1.0.min" %>
 </head>

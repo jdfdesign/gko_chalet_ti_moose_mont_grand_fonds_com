@@ -1,9 +1,43 @@
+/*
+Theme Name:         Villa
+Description:        Villa is html 5 theme to display your villa.
+Version:            1.0.0
+Author:             Regis Bruggheman
+Author URI:         http://joufdesign.com
+
+*/
+
+/* THEME VARIABLES
+-------------------------------------------------- */
 $th-footer-height: 60px;
+
+/* IMPORTS
+-------------------------------------------------- */
 @import "variables";
 @import "twitter/bootstrap/3.0.0.rc2/bootstrap";
 @import "font-awesome";
 
-/* PATCHES
+/* FIX FOR IE DEVICE_WIDTH BUG
+-------------------------------------------------- */
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+
+/* FIX FOR GMAP BUG
+-------------------------------------------------- */
+#map-canvas {
+  height: 400px;
+  img {
+    max-width: none;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+/* GLOBAL STYLE
 -------------------------------------------------- */
 // We do not want focus
 // -------------------------
@@ -13,18 +47,10 @@ a:focus,
 }
 ::selection {
 	background-color: $brand-primary;
-	color: #ffffff;
+	color: #fff;
 }
-// Gmap patches
-// -------------------------
-#map-canvas {
-  height: 400px;
-  img {
-    max-width: none;
-    vertical-align: middle;
-    border: 0;
-    -ms-interpolation-mode: bicubic;
-  }
+a {
+  @include transition(all 0.3s ease-in-out);
 }
 /* STICKY FOOTER STYLES
 -------------------------------------------------- */
@@ -50,12 +76,7 @@ body {
 footer {
   height: $th-footer-height;
   background-color: #fff;
-  overflow: hidden;
-}
-/* GLOBAL
--------------------------------------------------- */
-a {
-  @include transition(all 0.3s ease-in-out);
+
 }
 
 /* LAYOUT
@@ -78,6 +99,11 @@ h1, h2, h3, h4, h5, h6,
 /* CUSTOMIZE THE FOOTER
 -------------------------------------------------- */
 // Uncollapse the nav
+
+footer {
+  font-size: ceil($font-size-base * 0.70); // ~12px
+  text-transform: uppercase;
+}
 footer .nav {
   float: left;
   margin: 0;
@@ -88,8 +114,7 @@ footer .nav {
     > a {
       padding-top: (($th-footer-height - $line-height-computed) / 2);
       padding-bottom: (($th-footer-height - $line-height-computed) / 2);
-      font-size: $font-size-small - 2;
-      text-transform: uppercase;
+      
       &:hover,
       &:focus {
         background-color: transparent;
@@ -97,6 +122,20 @@ footer .nav {
       }
     }
   }
+} 
+
+.copyright {
+  padding-top: (($th-footer-height - $line-height-computed) / 2);
+  padding-bottom: (($th-footer-height - $line-height-computed) / 2);
+  margin-bottom: 0;
+  @media (min-width: $grid-float-breakpoint) {
+    @include pull-right(); 
+  }
+}
+
+.copyright-author {
+ 	background: transparent image-url('gko/logo_gecko_black.png') center left no-repeat;
+ 	padding-left: 28px;
 }
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -106,6 +145,7 @@ footer .nav {
   margin-bottom: 0;
   max-width: $screen-tablet;
   @include center-block();
+
 }
 
 .carousel-inner > .item > img {
@@ -121,21 +161,99 @@ footer .nav {
   margin-left: -45px;
   font-family: serif;
   font-size: 90px;
+}
+// Scale up controls for tablets and up
+@media screen and (min-width: $screen-tablet) {
+
+  // Scale up the controls a smidge
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width:  90px;
+    height: 90px;
+    margin-top: -45px;
+    margin-left: -45px;
+    font-size: 90px;
+  }
 } 
+@media (min-width: $grid-float-breakpoint) {
+  .carousel-control .icon-prev {
+    margin-left: -120px;
+  }
+  .carousel-control .icon-next {
+    margin-left: 30px;
+  }
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 .navbar {
-  margin-bottom: 0;
+
+  &.navbar-default {
+    border-bottom-color: #ccc;
+  }
 }
 .navbar-brand {
   font-family: 'Lobster', Georgia, "Times New Roman", Times, serif;
-  font-size: 24px;
+  font-size: 30px;
 } 
-.navbar-nav > li > a {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: $font-size-base - 3;
+.navbar-nav {
+  
+  > li > a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: $font-size-base - 3;
+  }
+
+  .dropdown {
+     > a .caret {
+       display:none; 
+     }
+    .dropdown-menu {
+      display: block;
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      > li > a,
+       .dropdown-header {
+         padding: 5px 15px 5px 25px;
+       }
+       > li > a {
+         line-height: $line-height-computed;
+         &:hover,
+         &:focus {
+           background-image: none;
+         }
+       }
+     } 
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    @include pull-right;
+    .dropdown {
+      > a .caret {
+         display: inline-block; 
+      }
+      .dropdown-menu {
+        position: absolute;
+        display: none;
+        float: left;
+        background-color: $dropdown-bg;
+        border: 1px solid $dropdown-fallback-border; // IE8 fallback
+        border: 1px solid $dropdown-border;
+        border-radius: $border-radius-base;
+        @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+      }
+      &:hover {
+        .dropdown-menu {
+          display: block; 
+        }
+      } 
+    }
+  }
 }
 
 #locales-menu {
@@ -172,16 +290,20 @@ footer .nav {
 }
 .copy-text {
   font-family: $font-family-serif;
-  font-size: 19px;
-  line-height: 32px;
+  font-size: 17px;
+  line-height: 30px;
   font-weight: 400;
   max-width: 600px;
   @include center-block();
+  table {
+    @extend .table;
+    text-align: center;
+  }
 }
 
 /* CONTACT STYLES
 -------------------------------------------------- */ 
-#contacts { 
+#contact_us { 
   padding-top: $line-height-computed * 3;
   padding-bottom: $line-height-computed * 3;
   
@@ -212,7 +334,7 @@ textarea.form-control {
   resize: none;
 }
 
-#contacts .btn {
+#contact_us .btn {
   width:100%;
   margin-top:1em; 
   border-radius:0; 
@@ -238,33 +360,3 @@ span.valid{background-image:image_path("notifications/valid.svg");}
 .alert-success{background-color:#22b573; color: white;}
 
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
-// Scale up controls for tablets and up
-@media screen and (min-width: $screen-tablet) {
-
-  // Scale up the controls a smidge
-  .carousel-control .icon-prev,
-  .carousel-control .icon-next {
-    width:  90px;
-    height: 90px;
-    margin-top: -45px;
-    margin-left: -45px;
-    font-size: 90px;
-  }
-}
-
-@media (max-width: $grid-float-breakpoint) {
-
-}
-@media (min-width: $grid-float-breakpoint + 1) {
-  .navbar-nav {
-    @include pull-right;
-  }
-  .carousel-control .icon-prev {
-    margin-left: -120px;
-  }
-  .carousel-control .icon-next {
-    margin-left: 30px;
-  }
-}

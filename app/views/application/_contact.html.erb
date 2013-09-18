@@ -1,6 +1,7 @@
 <% if page_contact = site.sections.find_by_name("contact") %>
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 intro">
+<div class="container">
+  <div class="row">
+  <div class="col-xs-12 intro">
     <h1 class="text-center"><%= page_contact.title %></h1>
     <%= render_copy_text(page_contact.body, :class => 'text-center') %> 
   </div>
@@ -20,7 +21,7 @@
           <textarea name="inquiry[message]" id="inquiry_message" rows="20" cols="30" class="form-control required" placeholder="<%= t('simple_form.labels.inquiry.message') %>"></textarea>
         </div>
         <div class="col-xs-12 formContainer">
-          <input type="hidden" name="submitted" id="submitted" class="button" value="SEND"><button id="submit" class="btn" type="submit"><%= t("gko.inquiry_send") %></button>
+          <input type="hidden" name="submitted" id="submitted" class="button" value="SEND"><button id="submit" class="btn" type="submit"><%= t("gko.inquiry_submit") %></button>
         </div>
         <div class="col-xs-12 formContainer">
           <p id="error" data-alert="" class="alert"><%= t("gko.inquiry_error") %></p>
@@ -31,5 +32,6 @@
       </div>
     </form>
   </div>
+</div>
 </div>
 <% end %>
