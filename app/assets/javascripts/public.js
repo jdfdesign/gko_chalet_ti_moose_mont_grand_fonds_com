@@ -40,10 +40,27 @@ jQuery(function($){
 ================================================== */ 
 
   THEME.carousel = function(){
-    // start the carousel
-    $('.carousel').carousel({
-      interval: 3000
-    });
+    // start the carousel if there is more than one image
+    // else hide controls
+    $('.carousel').each(function(index) {
+      var _self = $(this);
+      if (_self.find('.item').length > 1) {
+        _self.carousel({
+          interval: 3000
+        });
+      } else {
+        _self.find('.carousel-control').each(function(index) {
+          $(this).css({
+            display: 'none'
+          })
+        })
+        _self.find('.carousel-indicators').each(function(index) {
+          $(this).css({
+            display: 'none'
+          })
+        })
+      }
+    })
   };   
     
 /*==================================================

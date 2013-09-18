@@ -7637,8 +7637,8 @@ td.visible-print {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/assets/fontawesome-webfont.eot");
-  src: url("/assets/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fontawesome-webfont.woff") format("woff"), url("/assets/fontawesome-webfont.ttf") format("truetype"), url("/assets/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  src: url("/assets/fontawesome-webfont-009f6d1f667cc42c25e712ab3429cbc7.eot");
+  src: url("/assets/fontawesome-webfont-009f6d1f667cc42c25e712ab3429cbc7.eot?#iefix") format("embedded-opentype"), url("/assets/fontawesome-webfont-b4d67f1e5651506c3e80d842ee67d6ba.woff") format("woff"), url("/assets/fontawesome-webfont-fb7a72c810ec644f3c26dcca68638308.ttf") format("truetype"), url("/assets/fontawesome-webfont-f1c2889911d212e1403b68eabc1a3a56.svg#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -10018,7 +10018,7 @@ footer {
 -------------------------------------------------- */
 /* line 85, ../../app/assets/stylesheets/public.css.scss */
 body {
-  background-image: url(/assets/retina_wood.png);
+  background-image: url(/assets/retina_wood-bf8332c593a6ce7bbcb76387786c11cd.png);
   background-position: 0 0;
   background-repeat: repeat repeat;
 }
@@ -10076,7 +10076,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
 
 /* line 137, ../../app/assets/stylesheets/public.css.scss */
 .copyright-author {
-  background: transparent url(/assets/gko/logo_gecko_black.png) center left no-repeat;
+  background: transparent url(/assets/gko/logo_gecko_black-54320c6a6ed72638b09842e1dcc8e9f4.png) center left no-repeat;
   padding-left: 28px;
 }
 
