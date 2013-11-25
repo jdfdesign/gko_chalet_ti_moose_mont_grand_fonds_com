@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130827042658) do
+ActiveRecord::Schema.define(:version => 20131125115245) do
 
   create_table "assets", :force => true do |t|
     t.integer  "site_id"
@@ -98,11 +98,10 @@ ActiveRecord::Schema.define(:version => 20130827042658) do
     t.string   "image_ext"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
-    t.integer  "country_id"
     t.string   "language",           :limit => 5
+    t.string   "country"
   end
 
-  add_index "document_items", ["country_id"], :name => "index_press_articles_on_country_id"
   add_index "document_items", ["section_id"], :name => "index_press_articles_on_section_id"
   add_index "document_items", ["site_id"], :name => "index_press_articles_on_site_id"
 
@@ -361,13 +360,6 @@ ActiveRecord::Schema.define(:version => 20130827042658) do
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
     t.text     "plugins"
-    t.string   "logo_mime_type"
-    t.string   "logo_name"
-    t.integer  "logo_size"
-    t.integer  "logo_width"
-    t.integer  "logo_height"
-    t.string   "logo_uid"
-    t.string   "logo_ext"
     t.string   "default_image_uid"
     t.integer  "languages_count",          :default => 0
     t.datetime "liquid_models_updated_at"
@@ -375,11 +367,31 @@ ActiveRecord::Schema.define(:version => 20130827042658) do
     t.boolean  "front_page_cached",        :default => false
     t.text     "stylesheet"
     t.text     "javascript"
-    t.integer  "site_registrations_count", :default => 0
     t.text     "mailer_settings"
   end
 
   add_index "sites", ["host"], :name => "index_sites_on_host", :unique => true
+
+  create_table "text_element_translations", :force => true do |t|
+    t.integer  "text_element_id"
+    t.string   "locale"
+    t.text     "value"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "text_element_translations", ["locale", "text_element_id"], :name => "index_text_element_translations_on_locale_and_text_element_id"
+
+  create_table "text_elements", :force => true do |t|
+    t.integer "section_id"
+    t.string  "key"
+    t.text    "value"
+    t.integer "position",   :default => 1
+    t.string  "value_type"
+  end
+
+  add_index "text_elements", ["key"], :name => "index_text_elements_on_name"
+  add_index "text_elements", ["section_id"], :name => "index_text_elements_on_section_id"
 
   create_table "tokenized_permissions", :force => true do |t|
     t.integer  "permissable_id"
